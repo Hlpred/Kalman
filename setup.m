@@ -27,16 +27,17 @@ marker_data = [marker_data, [50;60;0.5]];
 marker_data = [marker_data, [50;100;0.5]];
 marker_data = [marker_data, [20;80;0.5]];
 
-visualize = true;
+visualize = false;
 N = size(marker_data, 2);
 if visualize
     for i=1:N
         plot(marker_data(1,i),marker_data(2,i),'b*')
         hold on
     end
+    plot(0,0,'r*')
+    plot(landing_site(1),landing_site(2),'r*')
+    
+    axis equal
 end
 
-plot(0,0,'r*')
-plot(landing_site(1),landing_site(2),'r*')
-
-axis equal
+open("EKF.slx")
